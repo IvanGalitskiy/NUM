@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num_description">Num поможет определить кто вам звонит</string>
+    <string name="continue_str">Продолжить</string>
+    <string name="privacy_policy">Нажимая продолжить вы соглашаетесь с Условиями использования приложения</string>
+    <string name="subscription_not_active">Подписка не активна!</string>
+    <string name="select_position">Перемещите на место, на котором будет отображатся окно информации</string>
+    <string name="data_call">Данные, отображаемые при звонке</string>
+    <string name="name">Имя</string>
+    <string name="category">Категория</string>
+    <string name="avatar">Аватар</string>
+    <string name="country">Страна</string>
+    <string name="group">Група</string>
+    <string name="region">Регион</string>
+    <string name="operator">Оператор</string>
+    <string name="language">Язык</string>
+    <string name="position">Позиция сообщения</string>
+    <string name="settings">Настройки</string>
+    <string name="select_language">Выберите язык</string>
+</resources>

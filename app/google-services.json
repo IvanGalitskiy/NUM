@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "926723470945",
+    "firebase_url": "https://phonetest-1fb05.firebaseio.com",
+    "project_id": "phonetest-1fb05",
+    "storage_bucket": "phonetest-1fb05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926723470945:android:edeb11a5706db1c6",
+        "android_client_info": {
+          "package_name": "com.vallsoft.num"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926723470945-vbpsr6hdtbbsnet47efeoa1vpp1bnqfi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vallsoft.num",
+            "certificate_hash": "533502db700f76e2ed06b385431efe0667b465dc"
+          }
+        },
+        {
+          "client_id": "926723470945-2nm9euusjfmq6d2aooi01dqbpb0ohioh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vallsoft.num",
+            "certificate_hash": "f15fcb10116af14854b8d21b17f127663b75e432"
+          }
+        },
+        {
+          "client_id": "926723470945-csiblai1cdpcutu458temqb41kpmq1te.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNH0Pu2kG-Ojrw8wv4vRRv5noyCZ4KZ44"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926723470945-csiblai1cdpcutu458temqb41kpmq1te.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "926723470945-5ng2fn8h1ptcbv2v1gq7luf9dh48p6jj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ZYR.NUM"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926723470945:android:3531fb1c54b9db29",
+        "android_client_info": {
+          "package_name": "phonecontrol.vallsoft.com.phonecontrol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926723470945-ghknmn0agpuem4d6o04ltc1mpsfuksfb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "phonecontrol.vallsoft.com.phonecontrol",
+            "certificate_hash": "f15fcb10116af14854b8d21b17f127663b75e432"
+          }
+        },
+        {
+          "client_id": "926723470945-csiblai1cdpcutu458temqb41kpmq1te.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNH0Pu2kG-Ojrw8wv4vRRv5noyCZ4KZ44"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926723470945-csiblai1cdpcutu458temqb41kpmq1te.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "926723470945-5ng2fn8h1ptcbv2v1gq7luf9dh48p6jj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ZYR.NUM"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

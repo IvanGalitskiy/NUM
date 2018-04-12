@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">NUM</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="ad_mob_app_id" translatable="false">ca-app-pub-6822678516999860~3405197048</string>
+    <string name="ad_mob_test_app_id" translatable="false">ca-app-pub-6822678516999860~3405197048</string>
+    <string name="ad_mob_video_id" translatable="false">ca-app-pub-6822678516999860/4520020827</string>
+    <string name="ad_mob_test_video_id" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="num_description">Num help your phone determine who is calling you</string>
+    <string name="continue_str">Continue</string>
+    <string name="privacy_policy">By clicking continue, you accept the Terms of Service</string>
+    <string name="subscription_not_active">Subscription is not active!</string>
+    <string name="select_position">Drag to the location where the information window will be displayed</string>
+    <string name="data_call">Data displayed on call</string>
+    <string name="name">Name</string>
+    <string name="category">Category</string>
+    <string name="avatar">Avatar</string>
+    <string name="country">Country</string>
+    <string name="group">Group</string>
+    <string name="region">Region</string>
+    <string name="operator">Operator</string>
+    <string name="language">Language</string>
+    <string name="position">Position</string>
+    <string name="settings">Settings</string>
+    <string name="select_language">Choose language</string>
+</resources>
