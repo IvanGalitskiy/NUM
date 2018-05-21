@@ -21,4 +21,5 @@
     <string name="yes">Sì</string>
     <string name="no">No</string>
     <string name="address">Indirizzo</string>
+    <string name="profile">Profilo</string>
 </resources>

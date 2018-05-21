@@ -132,6 +132,11 @@ public class MainActivity extends AppCompatActivity implements
                             .replace(R.id.container, settingsFragment)
                             .commit();
                     break;
+                case R.id.profile:
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.container, new ProfileFragment())
+                            .commit();
+                    break;
                 case R.id.pos:
                     getFragmentManager().beginTransaction()
                             .replace(R.id.container, new FragmentPositionPicker())

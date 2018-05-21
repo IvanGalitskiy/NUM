@@ -143,7 +143,14 @@ public class BillingPresenter implements PurchasesUpdatedListener, BillingClient
                     break;
             }
         }
-        billingPreference.setBillingGranted(command == COMMAND_GRANTED);
+        // При исполнении метода setBillingGranted возникает ошибка NullPointerException
+        try {
+
+            billingPreference.setBillingGranted(command == COMMAND_GRANTED);
+        }
+        catch (NullPointerException e){
+            Log.d("Null pointer exp", e.getMessage());
+        }
         lastCommand = command;
     }
 
