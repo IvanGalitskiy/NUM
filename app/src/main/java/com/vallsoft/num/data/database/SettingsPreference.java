@@ -15,7 +15,11 @@ public class SettingsPreference {
     public static final String CATEGORY = "category";
     public static final String COUNTRY = "country";
     public static final String NAMEGROUP = "namegroup";
+    public static final String ADDRESS = "address";
     public static final String LANGUAGE = "language";
+
+    public static final String DEVICE_ID = "device_id";
+
 
     public static final String POSITIONOFMESSAGE = "positionofmessage";
 
@@ -27,9 +31,19 @@ public class SettingsPreference {
         preferences = context.getSharedPreferences(FILENAME, Context.MODE_PRIVATE);
     }
 
+
+    public String getDeviceId(String defValue){
+       return preferences.getString(DEVICE_ID,defValue);
+    }
+
     public void saveSettings(String key, boolean value) {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean(key, value);
+        editor.apply();
+    }
+    public void saveSettings(String key, String value) {
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(key, value);
         editor.apply();
     }
 
@@ -42,6 +56,7 @@ public class SettingsPreference {
         map.put(CATEGORY, preferences.getBoolean(CATEGORY, true));
         map.put(COUNTRY, preferences.getBoolean(COUNTRY, true));
         map.put(NAMEGROUP, preferences.getBoolean(NAMEGROUP, true));
+        map.put(ADDRESS, preferences.getBoolean(ADDRESS, true));
         return map;
     }
 
@@ -73,7 +88,17 @@ public class SettingsPreference {
         editor.apply();
     }
 
+    public void setDefValues(){
+        saveSettings(OPERATOR,true);
+        saveSettings(REGION,true);
+        saveSettings(NAME,false);
+        saveSettings(AVATAR,false);
+        saveSettings(CATEGORY,false);
+        saveSettings(COUNTRY,false);
+        saveSettings(NAMEGROUP,false);
+        saveSettings(ADDRESS,false);
+    }
     public String getCurrentLanguage() {
-        return preferences.getString(LANGUAGE, "EN");
+        return preferences.getString(LANGUAGE, null);
     }
 }

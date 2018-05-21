@@ -8,13 +8,14 @@ data class User(
         var category: String? = null,
         var country: String? = null,
         var name: String? = null,
-        var namegroup: String? = null) {
+        var namegroup: String? = null,
+        var address: String?= null) {
     constructor() : this("", "", "",
-            "", "", "", "", "")
+            "", "", "", "", "", "")
 
-    fun isEmty():Boolean {
+    fun isEmpty():Boolean {
         return operator.isNullOrEmpty() && region.isNullOrEmpty() && avatar.isNullOrEmpty() &&
                 category.isNullOrEmpty() && country.isNullOrEmpty() && name.isNullOrEmpty() &&
-                namegroup.isNullOrEmpty()
+                namegroup.isNullOrEmpty() && address.isNullOrEmpty()
     }
 }

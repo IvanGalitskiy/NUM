@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num_description">Num hilft Ihrem Handy bestimmen, wer Sie anruft</string>
+    <string name="continue_str">Weiter</string>
+    <string name="privacy_policy">Wenn Sie auf "Weiter" klicken, akzeptieren Sie die Nutzungsbedingungen</string>
+    <string name="subscription_not_active">Abonnement ist nicht aktiv!</string>
+    <string name="select_position">Ziehen Sie an die Stelle, an der das Informationsfenster angezeigt wird.</string>
+    <string name="data_call">Beim Anruf angezeigte Daten</string>
+    <string name="name">Name</string>
+    <string name="category">Kategorie</string>
+    <string name="avatar">Benutzerbild</string>
+    <string name="country">Land</string>
+    <string name="group">Gruppe</string>
+    <string name="region">Region</string>
+    <string name="operator">Operator</string>
+    <string name="language">Sprache</string>
+    <string name="position">Stelle</string>
+    <string name="settings">Einstellungen</string>
+    <string name="select_language">Sprache wählen</string>
+    <string name="ads_dialog_message">Sie können für die Nutzung der App bezahlen, indem Sie nur Anzeigen anschauen. Möchten Sie probieren?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="address">Adresse</string>
+</resources>

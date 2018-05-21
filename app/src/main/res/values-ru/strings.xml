@@ -17,4 +17,8 @@
     <string name="position">Позиция сообщения</string>
     <string name="settings">Настройки</string>
     <string name="select_language">Выберите язык</string>
+    <string name="ads_dialog_message">Вы можете оплатить использование приложение просто посмотрев рекламу. Желаете попробовать?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="address">Адресс</string>
 </resources>

@@ -3,12 +3,15 @@ package com.vallsoft.num.ui;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
 import com.vallsoft.num.R;
 import com.vallsoft.num.data.database.SettingsPreference;
 import com.vallsoft.num.presentation.BillingPresenter;
@@ -17,15 +20,20 @@ import com.vallsoft.num.presentation.view.IBillingView;
 import java.util.HashMap;
 
 
-public class SettingsFragment extends Fragment implements CompoundButton.OnCheckedChangeListener, IBillingView {
-    private SwitchCompat vRegion, vOperator, vName,vNamegroup,vAvatar,vCategory,vCountry;
+public class SettingsFragment extends Fragment implements CompoundButton.OnCheckedChangeListener, IBillingView, IProgressListener {
+    private SwitchCompat vRegion, vOperator, vName, vNamegroup, vAvatar, vCategory, vCountry, vAddress;
     private SettingsPreference preference;
     private BillingPresenter presenter;
-
+    private ProgressView vShowAds;
+    private MainActivity activity;
+    private CardView vAdsNotGranted;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_settings, container, false);
+
+        activity = (MainActivity) getActivity();
+
         vOperator = v.findViewById(R.id.operator_switch);
         vRegion = v.findViewById(R.id.region_switch);
         vName = v.findViewById(R.id.name_switch);
@@ -33,6 +41,9 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
         vAvatar = v.findViewById(R.id.avatar_switch);
         vCategory = v.findViewById(R.id.category_switch);
         vCountry = v.findViewById(R.id.country_switch);
+        vAddress = v.findViewById(R.id.address_switch);
+        vShowAds = v.findViewById(R.id.vShowAds);
+        vAdsNotGranted = v.findViewById(R.id.vAdsNotGranted);
 
         vOperator.setOnCheckedChangeListener(this);
         vRegion.setOnCheckedChangeListener(this);
@@ -41,9 +52,17 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
         vAvatar.setOnCheckedChangeListener(this);
         vCategory.setOnCheckedChangeListener(this);
         vCountry.setOnCheckedChangeListener(this);
+        vAddress.setOnCheckedChangeListener(this);
+        vShowAds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.showAds();
+                vShowAds.showProgress();
+            }
+        });
+
 
         preference = new SettingsPreference(getActivity());
-
         return v;
     }
 
@@ -51,7 +70,6 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         presenter = BillingPresenter.getInstance(getActivity());
-        presenter.attachView(this);
     }
 
     @Override
@@ -85,6 +103,10 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
             case R.id.avatar_switch:
                 key = SettingsPreference.AVATAR;
                 break;
+            case R.id.address_switch:
+                key = SettingsPreference.ADDRESS;
+                break;
+
             default:
                 break;
         }
@@ -92,7 +114,20 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        presenter.attachView(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        presenter.detachView(this);
+    }
+
+    @Override
     public void subscriptionGranted() {
+        vAdsNotGranted.setVisibility(View.GONE);
         HashMap<String, Boolean> settings = preference.getAllSettings();
         vOperator.setChecked(settings.get(SettingsPreference.OPERATOR));
         vRegion.setChecked(settings.get(SettingsPreference.REGION));
@@ -101,12 +136,14 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
         vCountry.setChecked(settings.get(SettingsPreference.COUNTRY));
         vCategory.setChecked(settings.get(SettingsPreference.CATEGORY));
         vAvatar.setChecked(settings.get(SettingsPreference.AVATAR));
+        vAddress.setChecked(settings.get(SettingsPreference.ADDRESS));
 
         setEnabledFunctionality(true);
     }
 
     @Override
     public void subscriptionDenied() {
+        vAdsNotGranted.setVisibility(View.VISIBLE);
         setEnabledFunctionality(false);
     }
 
@@ -119,13 +156,25 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
         vCountry.setEnabled(isEnabled);
         vName.setEnabled(isEnabled);
         vAvatar.setEnabled(isEnabled);
+        vAddress.setEnabled(isEnabled);
 
-        if (!isEnabled){
+        if (!isEnabled) {
             vCategory.setChecked(false);
             vNamegroup.setChecked(false);
             vCountry.setChecked(false);
             vName.setChecked(false);
             vAvatar.setChecked(false);
+            vAddress.setChecked(false);
         }
+    }
+
+    @Override
+    public void showProgress() {
+        vShowAds.showProgress();
+    }
+
+    @Override
+    public void hideProgress() {
+        vShowAds.hideProgress();
     }
 }

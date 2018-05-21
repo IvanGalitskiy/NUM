@@ -7,14 +7,31 @@ import android.util.DisplayMetrics;
 import com.vallsoft.num.data.database.SettingsPreference;
 import com.vallsoft.num.presentation.view.ILanguageView;
 
+import java.util.HashSet;
 import java.util.Locale;
 
 public class LanguagePresenter {
     private SettingsPreference mRepository;
-    private ILanguageView view;
+    private HashSet<ILanguageView> view;
 
-    public LanguagePresenter(SettingsPreference mRepository) {
+    private static LanguagePresenter instance;
+    public static LanguagePresenter getInstance(SettingsPreference mRepository){
+        if (instance==null){
+            instance = new LanguagePresenter(mRepository);
+        }
+        return instance;
+    }
+    private LanguagePresenter(SettingsPreference mRepository) {
         this.mRepository = mRepository;
+        view = new HashSet<>();
+    }
+
+    public void attach(ILanguageView view){
+        this.view.add(view);
+        view.onLanguageChanged();
+    }
+    public void detach(ILanguageView view){
+        this.view.remove(view);
     }
 
     public void changeLanguage(Context context, String localeString) {
@@ -24,8 +41,9 @@ public class LanguagePresenter {
 
     public void loadLanguage(Context context) {
         String lang = mRepository.getCurrentLanguage();
-        changeLang(context, lang);
-
+        if (lang!=null) {
+            changeLang(context, lang);
+        }
     }
 
     private void changeLang(Context context, String lang) {
@@ -37,7 +55,8 @@ public class LanguagePresenter {
         context.createConfigurationContext(conf);
         // Use conf.locale = new Locale(...) if targeting lower versions
         res.updateConfiguration(conf, dm);
-
-        view.onLanguageChanged();
+        for (ILanguageView view:view){
+            view.onLanguageChanged();
+        }
     }
 }

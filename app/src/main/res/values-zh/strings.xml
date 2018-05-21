@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num_description">Num 帮助您的手机识别谁在呼叫您</string>
+    <string name="continue_str">继续</string>
+    <string name="privacy_policy">通过单击 "继续", 您接受服务条款</string>
+    <string name="subscription_not_active">订阅不活动!</string>
+    <string name="select_position">拖到信息窗口的显示位置</string>
+    <string name="data_call">在调用时显示的数据</string>
+    <string name="name">名字</string>
+    <string name="category">类别</string>
+    <string name="avatar">化身</string>
+    <string name="country">国家</string>
+    <string name="group">组</string>
+    <string name="region">地区</string>
+    <string name="operator">算子</string>
+    <string name="language">语言</string>
+    <string name="position">位置</string>
+    <string name="settings">设置</string>
+    <string name="select_language">选择语言</string>
+    <string name="ads_dialog_message">您可能支付使用该应用程序只需看广告。 您想尝试吗？</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="address">地址</string>
+</resources>

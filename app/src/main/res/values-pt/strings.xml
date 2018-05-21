@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num_description">Num ajuda seu telefone a identificar quem está chamando você</string>
+    <string name="continue_str">Continuar</string>
+    <string name="privacy_policy">Clicando em Continuar, você aceita os Termos de Serviço</string>
+    <string name="subscription_not_active">Assinatura não está ativa!</string>
+    <string name="select_position">Arraste para o local onde a janela de informações será exibida</string>
+    <string name="data_call">Dados exibidos ao chamar</string>
+    <string name="name">Nome</string>
+    <string name="category">Categoria</string>
+    <string name="avatar">Avatar</string>
+    <string name="country">País</string>
+    <string name="group">Grupo</string>
+    <string name="region">Região</string>
+    <string name="operator">Operador</string>
+    <string name="language">Língua</string>
+    <string name="position">Posição</string>
+    <string name="settings">Configurações</string>
+    <string name="select_language">Selecione o idioma</string>
+    <string name="ads_dialog_message">Você pode pagar para usar o app simplesmente assistir anúncios. Você gostaria de tentar?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="address">Endereço</string>
+</resources>

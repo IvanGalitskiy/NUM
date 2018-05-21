@@ -53,8 +53,9 @@ public class CallReceiver extends AbstractPhonecallReceiver implements IUserDisp
             billingPreference = new BillingPreference(ctx);
         }
         context = ctx;
-        presenter.getUser(number.trim().replaceAll(" ","").replaceAll("-","")
-        .replaceAll("\\+",""));
+        if (number != null && !number.isEmpty())
+            presenter.getUser(number.trim().replaceAll(" ", "").replaceAll("-", "")
+                    .replaceAll("\\+", ""));
     }
 
     // Ответили - прячем окошко
@@ -98,17 +99,17 @@ public class CallReceiver extends AbstractPhonecallReceiver implements IUserDisp
                     billingPreference.getBillingGranted()) {
                 dialogView = inflater.inflate(R.layout.dialog_userinfo_withavatar, null);
                 ImageView vAvatar = dialogView.findViewById(R.id.avatar);
-                Picasso.with(context).load(u.getAvatar()).into(vAvatar);
+                Picasso.get().load(u.getAvatar()).into(vAvatar);
             } else {
                 dialogView = inflater.inflate(R.layout.dialog_userinfo, null);
             }
             AlertDialog alertDialog = dialogBuilder.create();
 
             alertDialog.getWindow().addFlags(
-                            WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD|
-                            WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON|
-                                    FLAG_KEEP_SCREEN_ON|
-                    WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+                    WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD |
+                            WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON |
+                            FLAG_KEEP_SCREEN_ON |
+                            WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
             alertDialog.setView(dialogView);
             TextView vOperator = dialogView.findViewById(R.id.operator);
             TextView vRegion = dialogView.findViewById(R.id.region);
@@ -117,38 +118,44 @@ public class CallReceiver extends AbstractPhonecallReceiver implements IUserDisp
             TextView vCategory = dialogView.findViewById(R.id.category);
             TextView vCountry = dialogView.findViewById(R.id.country);
             TextView vAdditional = dialogView.findViewById(R.id.additionalInfo);
+            TextView vAddress = dialogView.findViewById(R.id.address);
 
-            if (map.get(SettingsPreference.OPERATOR) && u.getOperator()!=null && !u.getOperator().isEmpty()) {
+            if (map.get(SettingsPreference.OPERATOR) && u.getOperator() != null && !u.getOperator().isEmpty()) {
                 vOperator.setText(u.getOperator());
             } else {
                 vOperator.setVisibility(View.GONE);
             }
-            if (map.get(SettingsPreference.NAME)&& u.getName()!=null && !u.getName().isEmpty()) {
+            if (map.get(SettingsPreference.NAME) && u.getName() != null && !u.getName().isEmpty()) {
                 vName.setText(u.getName());
             } else {
                 vName.setVisibility(View.GONE);
             }
-            if (map.get(SettingsPreference.NAMEGROUP)&& u.getNamegroup()!=null && !u.getNamegroup().isEmpty()) {
+            if (map.get(SettingsPreference.NAMEGROUP) && u.getNamegroup() != null && !u.getNamegroup().isEmpty()) {
                 vNamegroup.setText(u.getNamegroup());
             } else {
                 vNamegroup.setVisibility(View.GONE);
             }
-            if (map.get(SettingsPreference.CATEGORY)&& u.getCategory()!=null && !u.getCategory().isEmpty()) {
+            if (map.get(SettingsPreference.CATEGORY) && u.getCategory() != null && !u.getCategory().isEmpty()) {
                 vCategory.setText(u.getCategory());
             } else {
                 vCategory.setVisibility(View.GONE);
             }
-            if (map.get(SettingsPreference.COUNTRY)&& u.getCountry()!=null && !u.getCountry().isEmpty()) {
+            if (map.get(SettingsPreference.COUNTRY) && u.getCountry() != null && !u.getCountry().isEmpty()) {
                 vCountry.setText(u.getCountry());
             } else {
                 vCountry.setVisibility(View.GONE);
             }
-            if (map.get(SettingsPreference.REGION)&& u.getRegion()!=null && !u.getRegion().isEmpty()) {
+            if (map.get(SettingsPreference.REGION) && u.getRegion() != null && !u.getRegion().isEmpty()) {
                 vRegion.setText(u.getRegion());
             } else {
                 vRegion.setVisibility(View.GONE);
             }
-            if (vAdditional!=null) {
+            if (map.get(SettingsPreference.ADDRESS) && u.getAddress() != null && !u.getAddress().isEmpty()) {
+                vAddress.setText(u.getAddress());
+            } else {
+                vAddress.setVisibility(View.GONE);
+            }
+            if (vAdditional != null) {
                 if (billingPreference.getBillingGranted()) {
                     vAdditional.setVisibility(View.GONE);
                 } else {
@@ -170,13 +177,13 @@ public class CallReceiver extends AbstractPhonecallReceiver implements IUserDisp
             PowerManager.WakeLock wakeLock = pm.newWakeLock((PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.FULL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP), "TAG");
             wakeLock.acquire(60 * 1000L /*1 minute*/);
             KeyguardManager keyguardManager = (KeyguardManager) context.getApplicationContext().getSystemService(Context.KEYGUARD_SERVICE);
-            KeyguardManager.KeyguardLock keyguardLock =  keyguardManager.newKeyguardLock("TAG");
+            KeyguardManager.KeyguardLock keyguardLock = keyguardManager.newKeyguardLock("TAG");
             keyguardLock.disableKeyguard();
 
             dialogView.requestLayout();
             dialogView.invalidate();
 
-            if (!u.isEmty()) {
+            if (!u.isEmpty()) {
                 alertDialog.show();
                 alertDialogs.add(alertDialog);
             }
@@ -196,7 +203,6 @@ public class CallReceiver extends AbstractPhonecallReceiver implements IUserDisp
         }
 
     }
-
 
 
 }

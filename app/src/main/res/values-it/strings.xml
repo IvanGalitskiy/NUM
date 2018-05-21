@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num_description">Num aiuta il telefono a identificare chi ti chiama</string>
+    <string name="continue_str">Continua</string>
+    <string name="privacy_policy">Facendo clic su Continua, accetti i Termini di Servizio</string>
+    <string name="subscription_not_active">L\'abbonamento non è attivo!</string>
+    <string name="select_position">Trascina nella posizione in cui verrà visualizzata la finestra delle informazioni</string>
+    <string name="data_call">Dati visualizzati su chiamata</string>
+    <string name="name">Nome</string>
+    <string name="category">Categoria</string>
+    <string name="avatar">Avatar</string>
+    <string name="country">Nazione</string>
+    <string name="group">Gruppo</string>
+    <string name="region">Regione</string>
+    <string name="operator">Operatore</string>
+    <string name="language">Lingua</string>
+    <string name="position">Posizione</string>
+    <string name="settings">Impostazioni</string>
+    <string name="select_language">Scegli la lingua</string>
+    <string name="ads_dialog_message">Si può pagare per usare l\'app semplicemente guardare gli annunci. Vuoi provare?</string>
+    <string name="yes">Sì</string>
+    <string name="no">No</string>
+    <string name="address">Indirizzo</string>
+</resources>

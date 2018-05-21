@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num_description">Num aide votre téléphone à identifier qui vous appelle</string>
+    <string name="continue_str">Continuer</string>
+    <string name="privacy_policy">En cliquant sur Continuer, vous acceptez les Conditions d\'utilisation</string>
+    <string name="subscription_not_active">L\'abonnement n\'est pas actif!</string>
+    <string name="select_position">Faites glisser vers l\'emplacement où la fenêtre d\'informations sera affichée</string>
+    <string name="data_call">Données affichées sur appel</string>
+    <string name="name">Nom</string>
+    <string name="category">Catégorie</string>
+    <string name="avatar">Avatar</string>
+    <string name="country">Pays</string>
+    <string name="group">Groupe</string>
+    <string name="region">Région</string>
+    <string name="operator">Opérateur</string>
+    <string name="language">Langue</string>
+    <string name="position">Position</string>
+    <string name="settings">Paramètres</string>
+    <string name="select_language">Choisir la langue</string>
+    <string name="ads_dialog_message">Vous pouvez payer pour l\'utilisation de l\'application simplement regarder des annonces. Voulez-vous essayer?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="address">Adresse</string>
+</resources>

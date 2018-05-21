@@ -15,4 +15,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlActivated">@color/colorAccent</item>
     </style>
+    <style name="myprogress" parent="Base.Widget.AppCompat.ProgressBar">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
 </resources>

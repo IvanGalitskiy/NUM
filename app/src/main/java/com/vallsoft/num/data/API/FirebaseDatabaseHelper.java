@@ -29,32 +29,36 @@ public class FirebaseDatabaseHelper {
 //        mFirebaseInstance.setLogLevel(Logger.Level.INFO);
         // Получаем из нее таблицу с пользователями
         mFirebaseDatabase = mFirebaseInstance.getReference("Test_Struct_3");
+
+
         this.retriever = retriever;
     }
 
     // Получаем пользователя по телефону
     public void getUserByPhone(final String phone) {
-        Long lastPart = Long.parseLong(phone.substring(phone.length() / 2 + 1));
-        Long firstPart = Long.parseLong(phone.substring(0, phone.length() / 2 + 1));
-        mFirebaseDatabase.child(firstPart.toString()).child(lastPart.toString())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.getValue()!=null){
-                            User localUser = parseJson(new Gson().toJson(dataSnapshot.getValue()));
-                            if (localUser != null) {
-                                localUser.setPhone(phone);
-                                retriever.onUserRecieved(localUser, SOURCE_MSG);
+        if (phone!=null && !phone.isEmpty()) {
+            Long lastPart = Long.parseLong(phone.substring(phone.length() / 2 + 1));
+            Long firstPart = Long.parseLong(phone.substring(0, phone.length() / 2 + 1));
+            mFirebaseDatabase.child(firstPart.toString()).child(lastPart.toString())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.getValue() != null) {
+                                User localUser = parseJson(new Gson().toJson(dataSnapshot.getValue()));
+                                if (localUser != null) {
+                                    localUser.setPhone(phone);
+                                    retriever.onUserRecieved(localUser, SOURCE_MSG);
+                                }
                             }
+
                         }
 
-                    }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
+                        }
+                    });
+        }
     }
 
     public void getUserByPhone(Long phone) {

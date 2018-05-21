@@ -27,7 +27,7 @@ public class PhonePresenter implements IUserRetriever {
     public void getUser(String phone) {
         Long p = Long.parseLong(phone.replaceAll("[^\\d.]", ""));
         // если пользователя не существует в контактах
-        User u = helper.getUserByPhone(p);
+        User u = helper.getContactByPhoneNumber(p.toString());
 
         if (u == null && isNetworkAvailable()) {
             //Если есть доступ к сети

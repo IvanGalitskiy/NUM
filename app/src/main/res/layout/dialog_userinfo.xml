@@ -69,12 +69,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Russia"
-        app:layout_constraintBottom_toTopOf="@+id/additionalInfo"
+        app:layout_constraintBottom_toTopOf="@+id/address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/country" />
-
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        app:layout_constraintBottom_toTopOf="@+id/additionalInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/region" />
     <TextView
         android:id="@+id/additionalInfo"
         android:layout_width="wrap_content"
@@ -89,5 +98,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/region" />
+        app:layout_constraintTop_toBottomOf="@+id/address" />
 </android.support.constraint.ConstraintLayout>

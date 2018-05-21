@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="num_description">Num は、あなたの電話があなたを呼んでいる人を識別するのに役立ちます</string>
+    <string name="continue_str">続行</string>
+    <string name="privacy_policy">[続行] をクリックすると、サービスの利用規約に同意します。</string>
+    <string name="subscription_not_active">サブスクリプションがアクティブではありません!</string>
+    <string name="select_position">情報ウィンドウが表示される場所にドラッグします。</string>
+    <string name="data_call">通話中に表示されるデータ</string>
+    <string name="name">名前</string>
+    <string name="category">カテゴリ</string>
+    <string name="avatar">アバター</string>
+    <string name="country">国</string>
+    <string name="group">グループ</string>
+    <string name="region">地域</string>
+    <string name="operator">演算子</string>
+    <string name="language">言語</string>
+    <string name="position">位置</string>
+    <string name="settings">設定</string>
+    <string name="select_language">言語の選択</string>
+    <string name="ads_dialog_message">あなたはアプリを単に見ているだけで広告を見ることができます。試してみませんか？</string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <string name="address">住所</string>
+</resources>

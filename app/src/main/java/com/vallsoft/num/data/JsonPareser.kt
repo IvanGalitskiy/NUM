@@ -12,6 +12,7 @@ const val SCHEMA_OPERATOR = "Operator"
 const val SCHEMA_REGION = "Region"
 const val SCHEMA_COUNTRY = "country"
 const val SCHEMA_NAMEGROUP = "namegroup"
+const val SCHEMA_ADDRESS = "address"
 
 fun parseJson(json:String):User?{
     val user:User=User()
@@ -22,6 +23,7 @@ fun parseJson(json:String):User?{
     var haveRegion= false
     var haveCountry= false
     var haveNameGroup= false
+    var haveAddress= false
 
     if (!json.isEmpty()) {
         try {
@@ -75,6 +77,13 @@ fun parseJson(json:String):User?{
                     if (namegroup != null) {
                         user.namegroup = namegroup
                         haveNameGroup = true
+                    }
+                }
+                if (!haveAddress && jsonObject.has(prefix + SCHEMA_ADDRESS)) {
+                    val address = jsonObject.getString(prefix + SCHEMA_ADDRESS)
+                    if (address != null) {
+                        user.address = address
+                        haveAddress = true
                     }
                 }
             }
