@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/avatar_image_view"
         android:layout_width="141dp"
         android:layout_height="149dp"
         android:layout_marginStart="8dp"
@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/avatar_image_view">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,6 +51,7 @@
                     android:ems="10"
                     android:hint="@string/name"
                     android:inputType="textPersonName"
+                    android:singleLine="true"
                     tools:layout_editor_absoluteX="112dp"
                     tools:layout_editor_absoluteY="153dp" />
 
@@ -145,5 +146,64 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/profile_title_label"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/profile_cancel_btn"
+        app:layout_constraintStart_toStartOf="@+id/profile_save_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/phone_number_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="+7(385)242-23-75"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/profile_cancel_btn"
+        app:layout_constraintStart_toStartOf="@+id/profile_save_btn"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/profile_edit_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/profile_edit_button_label"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avatar_image_view" />
+
+    <Button
+        android:id="@+id/profile_save_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_save_button_label"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_edit_btn"
+        app:layout_constraintStart_toStartOf="@+id/profile_edit_btn" />
+
+    <Button
+        android:id="@+id/profile_cancel_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@android:string/cancel"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_edit_btn"
+        app:layout_constraintEnd_toEndOf="@+id/profile_edit_btn"
+        app:layout_constraintStart_toEndOf="@+id/profile_save_btn" />
 
 </android.support.constraint.ConstraintLayout>

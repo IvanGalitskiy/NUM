@@ -22,4 +22,7 @@
     <string name="no">Нет</string>
     <string name="address">Адресс</string>
     <string name="profile">Профиль</string>
+    <string name="profile_title_label">Ваш профиль</string>
+    <string name="profile_edit_button_label">Редактировать</string>
+    <string name="profile_save_button_label">Сохранить</string>
 </resources>

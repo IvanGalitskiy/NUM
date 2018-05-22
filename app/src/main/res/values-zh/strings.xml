@@ -22,4 +22,7 @@
     <string name="no">否</string>
     <string name="address">地址</string>
     <string name="profile">轮廓</string>
+    <string name="profile_title_label">你的个人资料</string>
+    <string name="profile_edit_button_label">编辑</string>
+    <string name="profile_save_button_label">保存</string>
 </resources>

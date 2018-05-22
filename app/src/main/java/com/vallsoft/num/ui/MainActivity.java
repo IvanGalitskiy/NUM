@@ -244,7 +244,8 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onLanguageChanged() {
         vNav.getMenu().getItem(0).setTitle(R.string.settings);
-        vNav.getMenu().getItem(1).setTitle(R.string.position);
-        vNav.getMenu().getItem(2).setTitle(R.string.language);
+        vNav.getMenu().getItem(1).setTitle(R.string.profile);
+        vNav.getMenu().getItem(2).setTitle(R.string.position);
+        vNav.getMenu().getItem(3).setTitle(R.string.language);
     }
 }

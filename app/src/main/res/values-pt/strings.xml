@@ -22,4 +22,7 @@
     <string name="no">Não</string>
     <string name="address">Endereço</string>
     <string name="profile">Perfil</string>
+    <string name="profile_title_label">Seu perfil</string>
+    <string name="profile_edit_button_label">Editar</string>
+    <string name="profile_save_button_label">Salvar</string>
 </resources>

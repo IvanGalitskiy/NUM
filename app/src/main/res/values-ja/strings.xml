@@ -22,4 +22,7 @@
     <string name="no">いいえ</string>
     <string name="address">住所</string>
     <string name="profile">横顔</string>
+    <string name="profile_title_label">あなたのプロフィール</string>
+    <string name="profile_edit_button_label">エディット</string>
+    <string name="profile_save_button_label">セーブ</string>
 </resources>
