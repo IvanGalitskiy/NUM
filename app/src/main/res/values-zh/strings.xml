@@ -25,4 +25,14 @@
     <string name="profile_title_label">你的个人资料</string>
     <string name="profile_edit_button_label">编辑</string>
     <string name="profile_save_button_label">保存</string>
+    <string name="input_your_phone">输入您的电话号码</string>
+    <string name="sign_in">签到</string>
+    <string name="send_sms_again">%d秒后重新发送</string>
+    <string name="resend_code_now">重新发送代码</string>
+    <string name="input_code_from_sms">输入短信的代码</string>
+    <string name="change_phone">换手机</string>
+    <string name="invalid_phone">电话格式无效</string>
+    <string name="cancel">取消</string>
+    <string name="time_remaining">还剩%d秒</string>
+    <string name="delete_profile">删除个人资料</string>
 </resources>

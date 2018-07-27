@@ -25,4 +25,14 @@
     <string name="profile_title_label">Seu perfil</string>
     <string name="profile_edit_button_label">Editar</string>
     <string name="profile_save_button_label">Salvar</string>
+    <string name="input_your_phone">Digite seu número de telefone</string>
+    <string name="sign_in">Assinar em</string>
+    <string name="send_sms_again">Reenviar após %d segundos</string>
+    <string name="resend_code_now">Reenviar código</string>
+    <string name="input_code_from_sms">Digite o código de SMS</string>
+    <string name="change_phone">Alterar telefone</string>
+    <string name="invalid_phone">Formato de telefone inválido</string>
+    <string name="cancel">Cancelar</string>
+    <string name="time_remaining">%d segundos restantes</string>
+    <string name="delete_profile">Excluir perfil</string>
 </resources>

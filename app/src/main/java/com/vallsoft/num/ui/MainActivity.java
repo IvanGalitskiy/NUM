@@ -1,8 +1,8 @@
 package com.vallsoft.num.ui;
 
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -10,14 +10,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.TimePicker;
 
-import com.adcolony.sdk.AdColony;
-import com.adcolony.sdk.AdColonyAdOptions;
-import com.adcolony.sdk.AdColonyAppOptions;
-import com.adcolony.sdk.AdColonyInterstitial;
-import com.adcolony.sdk.AdColonyInterstitialListener;
-import com.adcolony.sdk.AdColonyUserMetadata;
-import com.adcolony.sdk.AdColonyZone;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
@@ -34,15 +28,13 @@ import com.vallsoft.num.presentation.BillingPresenter;
 import com.vallsoft.num.presentation.LanguagePresenter;
 import com.vallsoft.num.presentation.view.IBillingView;
 import com.vallsoft.num.presentation.view.ILanguageView;
+import com.vallsoft.num.ui.profile.ProfileFragment;
 
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
 
 
 public class MainActivity extends AppCompatActivity implements
@@ -61,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements
     private FrameLayout vContainer;
     private IProgressListener progressListener;
     private AdsManager adsManager;
+    private int selectedTab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +116,8 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if (!isStateLoss && !isFinishing()) {
+        if (!isStateLoss && !isFinishing() && item.getItemId() != selectedTab) {
+            selectedTab = item.getItemId();
             switch (item.getItemId()) {
                 case R.id.settings:
                     SettingsFragment settingsFragment = new SettingsFragment();
@@ -165,23 +159,14 @@ public class MainActivity extends AppCompatActivity implements
         d = Observable.interval(500, TimeUnit.MILLISECONDS)
                 .take(2 * 30)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<Long>() {
-                    @Override
-                    public void accept(Long aLong) throws Exception {
-                        if (mRewardedVideoAd.isLoaded()) {
-                            mRewardedVideoAd.show();
-                            finalD.dispose();
-                            progressListener.hideProgress();
-                        }
+                .subscribe(aLong -> {
+                    if (mRewardedVideoAd.isLoaded()) {
+                        mRewardedVideoAd.show();
+                        finalD.dispose();
+                        progressListener.hideProgress();
                     }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) throws Exception {
-                    }
-                }, new Action() {
-                    @Override
-                    public void run() throws Exception {
-                    }
+                }, throwable -> {
+                }, () -> {
                 });
 
 

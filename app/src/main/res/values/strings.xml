@@ -30,4 +30,14 @@
     <string name="profile_title_label">Your profile</string>
     <string name="profile_save_button_label">Save</string>
     <string name="profile_edit_button_label">Edit</string>
+    <string name="input_your_phone">Enter your phone number</string>
+    <string name="sign_in">Sign in</string>
+    <string name="send_sms_again">Resend after %d sec</string>
+    <string name="resend_code_now">Resend code</string>
+    <string name="input_code_from_sms">Enter the code from SMS</string>
+    <string name="change_phone">Change phone</string>
+    <string name="invalid_phone">Invalid phone number</string>
+    <string name="cancel">Cancel</string>
+    <string name="time_remaining">%d seconds remaining</string>
+    <string name="delete_profile">Delete profile</string>
 </resources>

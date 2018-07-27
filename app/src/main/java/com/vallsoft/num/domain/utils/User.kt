@@ -2,14 +2,14 @@ package com.vallsoft.num.domain.utils
 
 data class User(
         var phone: String,
-        var operator: String? = null,
-        var region: String? = null,
-        var avatar: String? = null,
-        var category: String? = null,
-        var country: String? = null,
-        var name: String? = null,
-        var namegroup: String? = null,
-        var address: String?= null) {
+        var operator: String? = "",
+        var region: String? = "",
+        var avatar: String? = "",
+        var category: String? = "",
+        var country: String? = "",
+        var name: String? = "",
+        var namegroup: String? = "",
+        var address: String?= "") {
     constructor() : this("", "", "",
             "", "", "", "", "", "")
 

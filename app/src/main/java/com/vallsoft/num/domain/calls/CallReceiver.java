@@ -176,6 +176,7 @@ public class CallReceiver extends AbstractPhonecallReceiver implements IUserDisp
             PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             PowerManager.WakeLock wakeLock = pm.newWakeLock((PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.FULL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP), "TAG");
             wakeLock.acquire(60 * 1000L /*1 minute*/);
+			wakeLock.release();
             KeyguardManager keyguardManager = (KeyguardManager) context.getApplicationContext().getSystemService(Context.KEYGUARD_SERVICE);
             KeyguardManager.KeyguardLock keyguardLock = keyguardManager.newKeyguardLock("TAG");
             keyguardLock.disableKeyguard();

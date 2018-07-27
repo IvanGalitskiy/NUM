@@ -25,4 +25,14 @@
     <string name="profile_title_label">あなたのプロフィール</string>
     <string name="profile_edit_button_label">エディット</string>
     <string name="profile_save_button_label">セーブ</string>
+    <string name="input_your_phone">あなたの電話番号を入力してください</string>
+    <string name="sign_in">サインイン</string>
+    <string name="send_sms_again">%d秒後に再送信</string>
+    <string name="resend_code_now">コードを再送信する</string>
+    <string name="input_code_from_sms">SMSのコードを入力してください</string>
+    <string name="change_phone">電話を変更する</string>
+    <string name="invalid_phone">電話フォーマットが無効です</string>
+    <string name="cancel">キャンセル</string>
+    <string name="time_remaining">残り%d秒</string>
+    <string name="delete_profile">プロファイルを削除</string>
 </resources>

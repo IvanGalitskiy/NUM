@@ -17,7 +17,7 @@
     <string name="position">Позиция сообщения</string>
     <string name="settings">Настройки</string>
     <string name="select_language">Выберите язык</string>
-    <string name="ads_dialog_message">Вы можете оплатить использование приложение просто посмотрев рекламу. Желаете попробовать?</string>
+    <string name="ads_dialog_message">Вы можете оплатить использование приложения просто посмотрев рекламу. Желаете попробовать?</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
     <string name="address">Адресс</string>
@@ -25,4 +25,14 @@
     <string name="profile_title_label">Ваш профиль</string>
     <string name="profile_edit_button_label">Редактировать</string>
     <string name="profile_save_button_label">Сохранить</string>
+    <string name="input_your_phone">Укажите свой телефонный номер</string>
+    <string name="sign_in">Войти</string>
+    <string name="send_sms_again">Выслать повторно через %d секунд</string>
+    <string name="resend_code_now">Отправить код еще раз</string>
+    <string name="input_code_from_sms">Введите код из СМС</string>
+    <string name="change_phone">Изменить телефон</string>
+    <string name="invalid_phone">Неверный формат телефона</string>
+    <string name="cancel">Отмена</string>
+    <string name="time_remaining">Осталось %d сек</string>
+    <string name="delete_profile">Удалить профиль</string>
 </resources>
